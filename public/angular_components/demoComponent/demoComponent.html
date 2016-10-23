@@ -1,0 +1,11 @@
+angular.module('demoComponentModule', []);
+
+angular.module('demoComponentModule').component('demoComponent', {
+  	templateUrl: './app/components/homeComponent/homeComponent.html',
+  	controller: function HomeComponentController($scope, $rootScope, commonUtilService, $location) {
+		$scope.dummyData = commonUtilService.getMasterData;
+		$scope.proxyItemClick = function(proxyItemId) {
+			$location.path("/proxyDetail/" + proxyItemId);
+		};
+	}
+});
